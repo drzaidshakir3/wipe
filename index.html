@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة العشوائية</title>
+    <style>
+        /* استيراد خط حديث */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #6d5963, #6d5963);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #6d5963;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 8px 8px 16px #e3af5e, -8px -8px 16px #e3af5e;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #e3af5e;
+        }
+
+        /* تصميم السؤال */
+        .question {
+            background: #ffe6b4;
+            color: #6d5963;
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 4px 4px 8px #1a1a23, -4px -4px 8px #404056;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .question:hover {
+            background: #3A3A4E;
+            transform: scale(1.02);
+        }
+
+        /* تصميم الإجابة */
+        .answer {
+            display: none;
+            padding: 12px;
+            background: #252532;
+            border-left: 4px solid #FFD700;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-align: right;
+            font-size: 16px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: inset 4px 4px 8px #1a1a23, inset -4px -4px 8px #404056;
+        }
+
+        /* أيقونة الدوران */
+        .question span {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>الأسئلة المتكررة</h2>
+
+        <div class="question" onclick="toggleAnswer(1)"> سؤال 1 <span>▼</span></div>
+        <div class="answer" id="answer1">✔️ هذا هو الجواب .</div>
+
+        <div class="question" onclick="toggleAnswer(2)"> سؤال 2 <span>▼</span></div>
+        <div class="answer" id="answer2">✔️ هذا هو الجواب .</div>
+
+        <div class="question" onclick="toggleAnswer(3)"> سؤال 3 <span>▼</span></div>
+        <div class="answer" id="answer3">✔️ هذا هو الجواب .</div>
+
+        <div class="question" onclick="toggleAnswer(4)"> سؤال 4 <span>▼</span></div>
+        <div class="answer" id="answer4">✔️هذا هو الجواب.</div>
+
+        <div class="question" onclick="toggleAnswer(5)"> سؤال 5 <span>▼</span></div>
+        <div class="answer" id="answer5">✔️هذا هو الجواب .</div>
+    </div>
+
+           <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67becd262da7081909f2b80d/1il0lcvbt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    <!--End of Tawk.to Script-->
+    
+        function toggleAnswer(id) {
+            var answer = document.getElementById("answer" + id);
+            var icon = document.querySelector(".question:nth-child(" + (id * 2 - 1) + ") span");
+
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+                icon.classList.add("rotate");
+            } else {
+                answer.style.display = "none";
+                icon.classList.remove("rotate");
+            }
+        }
+    </script>
+
+</body>
+</html>
